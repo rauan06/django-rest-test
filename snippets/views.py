@@ -9,7 +9,7 @@ def snippet_list(request):
     """
     List all code snippets, or create  a new snippet.
     """
-    if request.metthod == 'GET':
+    if request.method == 'GET':
         snippets = Snippet.objects.all()
         serializer= SnippetSerializer(snippets, many=True)
         return JsonResponse(serializer.data, safe=False)
